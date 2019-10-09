@@ -19,6 +19,23 @@
   <%= @country_of_origin.sort_order %>
 </p>
 
+<hr>
+<p>
+  <strong>Documents:</strong>
+  <ul>
+   <% @country_of_origin.documents.each do |document| %>
+      <li><%= link_to document.blob.filename, url_for(document) %></li>
+      <%# show thumbnail if it is an image.. %> 
+      <%= if document.image?  then ( image_tag document.variant(resize: "180x180") )  end %> 
+          <%= link_to 'Remove', delete_document_attachment_country_of_origin_url(document),
+                    method: :delete,
+                    data: { confirm: 'Are you sure you want to delete?' } %>
+
+   <% end %>
+  </ul>
+</p>
+<hr>
+
 <br>
 <%= link_to 'Edit', edit_country_of_origin_path(@country_of_origin), class: "btn btn-primary", :style=>'color:#FFFFFF;' %> &nbsp &nbsp
 <%= link_to 'Back', country_of_origins_path, class: "btn btn-default" %>
