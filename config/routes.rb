@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :country_of_orgins do
+  resources :country_of_origins do
     member do
       delete :delete_document_attachment
     end
