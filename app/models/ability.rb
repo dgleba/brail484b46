@@ -16,7 +16,7 @@ class Ability
     elsif user.lr_regular?
       can :read, [ Product, Role, User]
       can [ :create, :update, :destroy, ], [ Product, ]
-      can history
+      # can history
     
     elsif user.lr_readonly?
       can :read, Role

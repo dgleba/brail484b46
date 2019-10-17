@@ -28,5 +28,5 @@ r18 = Role.create({name: "lr_admin", description: "Can perform any CRUD operatio
 
 User.create! email: 'a@e', name: "admin", password: 'a', password_confirmation: 'a', role_id: r18.id
 User.create! email: 'a', name: "admin", password: 'a', password_confirmation: 'a', role_id: r18.id
-u1 = User.create({name: "reg", email: "r", password: "a", password_confirmation: "a", role_id: r7.id})
+u1 = User.create({name: "reg", email: "r", password: "a", password_confirmation: "a", role_id: r3.id})
 
